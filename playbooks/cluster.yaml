@@ -82,16 +82,16 @@
       ansible.builtin.include_role:
         name: "ingress-nginx"
 
-- name: "provisioning : deployment of cert-manager.io to a new Kubernetes cluster"
-  hosts: masters
-  gather_facts: true
-  vars_files:
-    - "{{ playbook_dir }}/../defaults/main.yaml"
-
-  tasks:
-    - name: "includes the cert-manager.io role"
-      ansible.builtin.include_role:
-        name: "cert-manager"
+#- name: "provisioning : deployment of cert-manager.io to a new Kubernetes cluster"
+#  hosts: masters
+#  gather_facts: true
+#  vars_files:
+#    - "{{ playbook_dir }}/../defaults/main.yaml"
+#
+#  tasks:
+#    - name: "includes the cert-manager.io role"
+#      ansible.builtin.include_role:
+#        name: "cert-manager"
 
 # - name: "provisioning : deployment of NFS storage to a new Kubernetes cluster"
 #   hosts: nfs-servers
