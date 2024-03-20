@@ -34,72 +34,72 @@
     - name: "includes the Master role"
       ansible.builtin.include_role:
         name: "master"
-    - name: "includes the kubeadm role"
-      ansible.builtin.include_role:
-        name: "kubeadm"
-
-- name: "provisioning : configuration of a new Kubernetes worker"
-  hosts: workers
-  gather_facts: true
-  vars_files:
-    - "{{ playbook_dir }}/../defaults/main.yaml"
-
-  tasks:
-    - name: "includes the Worker role"
-      ansible.builtin.include_role:
-        name: "worker"
-
-- name: "provisioning : deployment of Calico to a new Kubernetes cluster"
-  hosts: masters
-  gather_facts: true
-  vars_files:
-    - "{{ playbook_dir }}/../defaults/main.yaml"
-
-  tasks:
-    - name: "includes the Calico role"
-      ansible.builtin.include_role:
-        name: "calico"
-
-- name: "provisioning : deployment of MetalLB to a new Kubernetes cluster"
-  hosts: masters
-  gather_facts: true
-  vars_files:
-    - "{{ playbook_dir }}/../defaults/main.yaml"
-
-  tasks:
-    - name: "includes the MetalLB role"
-      ansible.builtin.include_role:
-        name: "metallb"
-
-- name: "provisioning : deployment of Ingress Nginx controller to a new Kubernetes cluster"
-  hosts: masters
-  gather_facts: true
-  vars_files:
-    - "{{ playbook_dir }}/../defaults/main.yaml"
-
-  tasks:
-    - name: "includes the Ingress Nginx role"
-      ansible.builtin.include_role:
-        name: "ingress-nginx"
-
-#- name: "provisioning : deployment of cert-manager.io to a new Kubernetes cluster"
+#    - name: "includes the kubeadm role"
+#      ansible.builtin.include_role:
+#        name: "kubeadm"
+#
+#- name: "provisioning : configuration of a new Kubernetes worker"
+#  hosts: workers
+#  gather_facts: true
+#  vars_files:
+#    - "{{ playbook_dir }}/../defaults/main.yaml"
+#
+#  tasks:
+#    - name: "includes the Worker role"
+#      ansible.builtin.include_role:
+#        name: "worker"
+#
+#- name: "provisioning : deployment of Calico to a new Kubernetes cluster"
 #  hosts: masters
 #  gather_facts: true
 #  vars_files:
 #    - "{{ playbook_dir }}/../defaults/main.yaml"
 #
 #  tasks:
-#    - name: "includes the cert-manager.io role"
+#    - name: "includes the Calico role"
 #      ansible.builtin.include_role:
-#        name: "cert-manager"
-
-# - name: "provisioning : deployment of NFS storage to a new Kubernetes cluster"
-#   hosts: nfs-servers
-#   gather_facts: true
-#   vars_files:
-#     - "{{ playbook_dir }}/../defaults/main.yaml"
-
-#   tasks:
-#     - name: "includes the NFS Storage role"
-#       ansible.builtin.include_role:
-#         name: "nfs-server"
+#        name: "calico"
+#
+#- name: "provisioning : deployment of MetalLB to a new Kubernetes cluster"
+#  hosts: masters
+#  gather_facts: true
+#  vars_files:
+#    - "{{ playbook_dir }}/../defaults/main.yaml"
+#
+#  tasks:
+#    - name: "includes the MetalLB role"
+#      ansible.builtin.include_role:
+#        name: "metallb"
+#
+#- name: "provisioning : deployment of Ingress Nginx controller to a new Kubernetes cluster"
+#  hosts: masters
+#  gather_facts: true
+#  vars_files:
+#    - "{{ playbook_dir }}/../defaults/main.yaml"
+#
+#  tasks:
+#    - name: "includes the Ingress Nginx role"
+#      ansible.builtin.include_role:
+#        name: "ingress-nginx"
+#
+##- name: "provisioning : deployment of cert-manager.io to a new Kubernetes cluster"
+##  hosts: masters
+##  gather_facts: true
+##  vars_files:
+##    - "{{ playbook_dir }}/../defaults/main.yaml"
+##
+##  tasks:
+##    - name: "includes the cert-manager.io role"
+##      ansible.builtin.include_role:
+##        name: "cert-manager"
+#
+## - name: "provisioning : deployment of NFS storage to a new Kubernetes cluster"
+##   hosts: nfs-servers
+##   gather_facts: true
+##   vars_files:
+##     - "{{ playbook_dir }}/../defaults/main.yaml"
+#
+##   tasks:
+##     - name: "includes the NFS Storage role"
+##       ansible.builtin.include_role:
+##         name: "nfs-server"
