@@ -1,6 +1,6 @@
 - name: "install :: adds Containerd gpg key"
   become: true
-  ansible.builtin.shell: pacman -S  containerd
+  ansible.builtin.shell: pacman -Syu  --noconfirm containerd
 
 #- name: "install :: adds the official Containerd repository"
 #  become: true
