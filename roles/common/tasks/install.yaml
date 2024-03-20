@@ -26,4 +26,4 @@
 
 - name: "install :: update packages"
   become: true
-  ansible.builtin.shell: pacman -Syu --noconfirm
+  ansible.builtin.shell: pacman -Syu

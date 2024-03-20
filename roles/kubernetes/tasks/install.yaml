@@ -40,4 +40,4 @@
 
 - name: "install :: installs the Kubernetes packages"
   become: true
-  ansible.builtin.shell: pacman -Syu --noconfirm kubeadm kubelet kubectl
+  ansible.builtin.shell: pacman -Syu  kubeadm kubelet kubectl
